@@ -1,0 +1,36 @@
+{
+    "expenses": [
+        {
+            "id": 1,
+            "price": 15000,
+            "comment": "Pagi-Worted",
+            "category": "food"
+        },
+        {
+            "id": 2,
+            "price": 20000,
+            "comment": "Starbuck",
+            "category": "drink"
+        },
+        {
+            "id": 3,
+            "price": 12000,
+            "comment": "Grab",
+            "category": "transportation"
+        }
+    ],
+    "category": [
+        {
+            "id": 1,
+            "category": "food"
+        },
+        {
+            "id": 2,
+            "category": "drink"
+        },
+        {
+            "id": 3,
+            "category": "transportation"
+        }
+    ]
+}
