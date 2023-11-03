@@ -4,10 +4,12 @@ import { callAPI } from '../../domain/api'
 import axios from 'axios'
 import { Button, TextField } from '@mui/material'
 import styles from './category.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 const AddCategory = () => {
     const [dataCategory, setDataCategory] = useState()
     const [error, setError] = useState({})
+    const navigate = useNavigate()
 
     // Fetch Data API
     const fetchData = async () => {
@@ -56,8 +58,9 @@ const AddCategory = () => {
             })
 
             if (response.status === 201) {
-                console.log('Form Data Submitted Successfully');
-                window.alert('Data has been successfully added!');
+                console.log('Form Data Submitted Successfully')
+                window.alert('Data has been successfully added!')
+                navigate('/')
             } else {
                 console.error('Form Data Submission Failed')
             }
