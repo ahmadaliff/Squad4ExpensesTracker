@@ -13,6 +13,10 @@
   min-height: 100svh;
   width: 100%;
   gap: 5rem;
+  nav {
+    position: fixed;
+    top: 2rem;
+  }
   .alertWrap {
     display: flex;
     flex-direction: column;
@@ -46,6 +50,7 @@
         transform: scale(1.1, 1.1);
       }
     }
+
     .form {
       display: flex;
       justify-content: center;

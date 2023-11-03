@@ -94,12 +94,12 @@ function App() {
                 >
                   <PieCenterLabel>
                     Rp{" "}
-                    {expenseByCategories
-                      .reduce(
+                    {useGetMoneyString(
+                      expenseByCategories.reduce(
                         (total, category) => total + category.totalPrice,
                         0
                       )
-                      .toLocaleString()}
+                    )}
                   </PieCenterLabel>
                 </PieChart>
               </div>
