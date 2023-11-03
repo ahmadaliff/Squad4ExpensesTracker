@@ -4,11 +4,13 @@ import { callAPI } from '../../domain/api'
 import { Button, FormControl, InputAdornment, InputLabel, MenuItem, OutlinedInput, Select, TextField } from '@mui/material'
 import axios from 'axios'
 import styles from './transaction.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 const AddTransaction = () => {
     const [dataExpenses, setDataExpenses] = useState([])
     const [dataCategory, setDataCategory] = useState([])
     const [error, setError] = useState({})
+    const navigate = useNavigate()
 
     // Fetch Data API
     const fetchData = async () => {
@@ -73,8 +75,9 @@ const AddTransaction = () => {
             })
 
             if (response.status === 201) {
-                console.log('Form Data Submitted Successfully');
-                window.alert('Data has been successfully added!');
+                console.log('Form Data Submitted Successfully')
+                window.alert('Data has been successfully added!')
+                navigate('/')
             } else {
                 console.error('Form Data Submission Failed')
             }
@@ -164,7 +167,7 @@ const AddTransaction = () => {
                         {dataCategory?.map((category) => (
                             <MenuItem className={styles.item} key={category?.id} value={category?.category}> {category?.category} </MenuItem>
                         ))}
-                        
+                        <MenuItem className={styles.item__add} value='' onClick={() => {navigate('/add/category')}}> Add More Category </MenuItem>
                     </Select>
                 </FormControl>
                 <Button className={styles.form__validate__button} variant="contained" type='submit'> Create </Button>
