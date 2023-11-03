@@ -8,7 +8,7 @@ const ExpenseCard = ({ expense }) => {
 
   return (
     // TODO: Add the router
-    <div className={styles.card} onClick={() => navigate(`/`)}> 
+    <div className={styles.card} onClick={() => navigate(`/${expense.id}`)}>
       <div className={styles.card_left}>
         <p className={styles.category}>{expense.category}</p>
         <p className={styles.comment}>{expense.comment}</p>
@@ -17,7 +17,7 @@ const ExpenseCard = ({ expense }) => {
         <p>Rp {useGetMoneyString(expense.price)}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ExpenseCard;

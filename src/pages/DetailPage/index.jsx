@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { callAPI } from "../../domain/api";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   TextField,
   Alert,
@@ -78,6 +78,11 @@ const DetailPage = () => {
   };
   return (
     <div className={Styles.DetailPage}>
+      <nav>
+        <Link to={"/"}>
+          <h1>Expenses Tracker</h1>
+        </Link>
+      </nav>
       <div className={Styles.alertWrap}>
         {successMsg?.map((msg, key) => (
           <Alert severity="success" key={key}>

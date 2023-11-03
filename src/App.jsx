@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
-import { callAPI } from './domain/api';
-import { PieChart } from '@mui/x-charts/PieChart';
-import { useDrawingArea } from '@mui/x-charts/hooks';
-import { useNavigate } from 'react-router-dom';
-import { styled } from '@mui/material/styles';
+import { useEffect, useState } from "react";
+import { callAPI } from "./domain/api";
+import { PieChart } from "@mui/x-charts/PieChart";
+import { useDrawingArea } from "@mui/x-charts/hooks";
+import { useNavigate } from "react-router-dom";
+import { styled } from "@mui/material/styles";
 import styles from "./styles.module.scss";
-import CategoryCard from './components/CategoryCard/CategoryCard';
-import ReceiptRoundedIcon from '@mui/icons-material/ReceiptRounded';
-import { IconButton } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import { useGetMoneyString } from './helper/useGetMoneyString';
+import CategoryCard from "./components/CategoryCard/CategoryCard";
+import ReceiptRoundedIcon from "@mui/icons-material/ReceiptRounded";
+import { IconButton } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import { useGetMoneyString } from "./helper/useGetMoneyString";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ function App() {
 
   const navigate = useNavigate();
 
-  const fetchAllExpenses = async() => {
+  const fetchAllExpenses = async () => {
     setLoading(true);
     try {
       const data = await callAPI("expenses", "GET");
@@ -27,11 +27,16 @@ function App() {
 
       // Get each category's total prices
       const categoryTotals = data.reduce((result, expense) => {
-        const existingCategory = result.find((item) => item.category === expense.category);
+        const existingCategory = result.find(
+          (item) => item.category === expense.category
+        );
         if (existingCategory) {
           existingCategory.totalPrice += expense.price;
         } else {
-          result.push({ category: expense.category, totalPrice: expense.price });
+          result.push({
+            category: expense.category,
+            totalPrice: expense.price,
+          });
         }
         return result;
       }, []);
@@ -39,18 +44,19 @@ function App() {
       // Add percentage attribute to each category's expense
       const totalExpenses = data.reduce((total, item) => total + item.price, 0);
       categoryTotals.forEach((category) => {
-        category.percentage = Math.round((category.totalPrice / totalExpenses) * 100);
+        category.percentage = Math.round(
+          (category.totalPrice / totalExpenses) * 100
+        );
       });
 
       console.log(categoryTotals);
       setExpenseByCategories(categoryTotals);
-    
-    } catch(error) {
+    } catch (error) {
       console.error(error);
       alert(error);
     }
     setLoading(false);
-  }
+  };
 
   useEffect(() => {
     fetchAllExpenses();
@@ -60,33 +66,49 @@ function App() {
     <main>
       <nav>
         <h1>Expenses Tracker</h1>
-        <ReceiptRoundedIcon className={styles.detail_icon} onClick={() => navigate("/main-detail")} />
+        <ReceiptRoundedIcon
+          className={styles.detail_icon}
+          onClick={() => navigate("/main-detail")}
+        />
       </nav>
       <div className={styles.content}>
-        {loading ? (<p>Loading...</p>) : (
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
           <>
             <header>
-              <PieChart
-                series={[
-                  {
-                    data: expenseByCategories.map((category) => ({
-                      value: category.totalPrice,
-                      label: category.category
-                    })),
-                    innerRadius: 80
-                  },
-                ]}
-                width={400}
-                height={200}
-                className={styles.chart}
-              >
-                <PieCenterLabel>
-                  Rp {useGetMoneyString(expenseByCategories.reduce((total, category) => total + category.totalPrice, 0))}
-                </PieCenterLabel>
-              </PieChart>
-              <IconButton 
-                aria-label="add" variant="contained" color="primary" className={styles.add_icon}
-                onClick={() => navigate("/add")} // TODO: Know the add expense route  
+              <div className={styles.chart}>
+                <PieChart
+                  series={[
+                    {
+                      data: expenseByCategories.map((category) => ({
+                        value: category.totalPrice,
+                        label: category.category,
+                      })),
+                      innerRadius: 80,
+                      cx: 130,
+                    },
+                  ]}
+                  width={400}
+                  height={200}
+                >
+                  <PieCenterLabel>
+                    Rp{" "}
+                    {expenseByCategories
+                      .reduce(
+                        (total, category) => total + category.totalPrice,
+                        0
+                      )
+                      .toLocaleString()}
+                  </PieCenterLabel>
+                </PieChart>
+              </div>
+              <IconButton
+                aria-label="add"
+                variant="contained"
+                color="primary"
+                className={styles.add_icon}
+                onClick={() => navigate("/add")} // TODO: Know the add expense route
               >
                 <AddIcon />
               </IconButton>
@@ -101,15 +123,15 @@ function App() {
         )}
       </div>
     </main>
-  )
+  );
 }
 
 export default App;
 
-const StyledText = styled('text')(({ theme }) => ({
+const StyledText = styled("text")(({ theme }) => ({
   fill: theme.palette.text.primary,
-  textAnchor: 'middle',
-  dominantBaseline: 'central',
+  textAnchor: "middle",
+  dominantBaseline: "central",
   fontSize: 20,
 }));
 
@@ -120,4 +142,4 @@ const PieCenterLabel = ({ children }) => {
       {children}
     </StyledText>
   );
-}
+};
