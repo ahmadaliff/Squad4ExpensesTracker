@@ -79,7 +79,11 @@ const AddTransaction = () => {
     try {
       const response = await axios.post(
         "http://localhost:3000/expenses",
-        formData,
+        {
+          price: parseInt(formData.price),
+          comment: formData.comment,
+          category: formData.category
+        },
         {
           headers: {
             "Content-Type": "application/json",
