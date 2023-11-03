@@ -113,7 +113,12 @@ const DetailPage = () => {
             variant="standard"
             name="price"
             label="Price"
-            onChange={handleChange}
+            onChange={(e) =>
+              setDataExpenses({
+                ...dataExpenses,
+                price: parseInt(e.target.value),
+              })
+            }
             className={`${Styles.formInput} ${!isEdit && Styles.notEdit}`}
             disabled={!isEdit}
             required
