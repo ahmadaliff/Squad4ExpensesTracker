@@ -65,6 +65,18 @@
             "price": 120000,
             "comment": "",
             "category": "food"
+        },
+        {
+            "id": 12,
+            "price": 220000,
+            "comment": "",
+            "category": "food"
+        },
+        {
+            "id": 13,
+            "price": 220000,
+            "comment": "",
+            "category": "food"
         }
     ],
     "category": [

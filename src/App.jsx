@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { callAPI } from './domain/api';
@@ -10,6 +11,7 @@ import CategoryCard from './components/CategoryCard/CategoryCard';
 import ReceiptRoundedIcon from '@mui/icons-material/ReceiptRounded';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import { useGetMoneyString } from './helper/useGetMoneyString';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -79,7 +81,7 @@ function App() {
                 className={styles.chart}
               >
                 <PieCenterLabel>
-                  Rp {expenseByCategories.reduce((total, category) => total + category.totalPrice, 0).toLocaleString()}
+                  Rp {useGetMoneyString(expenseByCategories.reduce((total, category) => total + category.totalPrice, 0))}
                 </PieCenterLabel>
               </PieChart>
               <IconButton 
