@@ -3,7 +3,7 @@
         {
             "id": 1,
             "price": 15000,
-            "comment": "Pagi-Worted",
+            "comment": "Pagi - Warteg",
             "category": "food"
         },
         {
@@ -17,6 +17,54 @@
             "price": 12000,
             "comment": "Grab",
             "category": "transportation"
+        },
+        {
+            "id": 4,
+            "price": 16000,
+            "comment": "Gojek",
+            "category": "transportation"
+        },
+        {
+            "id": 5,
+            "price": 12000,
+            "comment": "",
+            "category": "drink"
+        },
+        {
+            "id": 6,
+            "price": 80000,
+            "comment": "AYCE",
+            "category": "food"
+        },
+        {
+            "id": 7,
+            "price": 120000,
+            "comment": "",
+            "category": "food"
+        },
+        {
+            "id": 8,
+            "price": 120000,
+            "comment": "",
+            "category": "food"
+        },
+        {
+            "id": 9,
+            "price": 120000,
+            "comment": "",
+            "category": "food"
+        },
+        {
+            "id": 10,
+            "price": 120000,
+            "comment": "",
+            "category": "food"
+        },
+        {
+            "id": 11,
+            "price": 120000,
+            "comment": "",
+            "category": "food"
         }
     ],
     "category": [
