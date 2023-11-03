@@ -1,96 +1,102 @@
 {
-    "expenses": [
-        {
-            "id": 1,
-            "price": 15000,
-            "comment": "Pagi - Warteg",
-            "category": "food"
-        },
-        {
-            "id": 2,
-            "price": 20000,
-            "comment": "Starbuck",
-            "category": "drink"
-        },
-        {
-            "id": 3,
-            "price": 12000,
-            "comment": "Grab",
-            "category": "transportation"
-        },
-        {
-            "id": 4,
-            "price": 16000,
-            "comment": "Gojek",
-            "category": "transportation"
-        },
-        {
-            "id": 5,
-            "price": 12000,
-            "comment": "",
-            "category": "drink"
-        },
-        {
-            "id": 6,
-            "price": 80000,
-            "comment": "AYCE",
-            "category": "food"
-        },
-        {
-            "id": 7,
-            "price": 120000,
-            "comment": "",
-            "category": "food"
-        },
-        {
-            "id": 8,
-            "price": 120000,
-            "comment": "",
-            "category": "food"
-        },
-        {
-            "id": 9,
-            "price": 120000,
-            "comment": "",
-            "category": "food"
-        },
-        {
-            "id": 10,
-            "price": 120000,
-            "comment": "",
-            "category": "food"
-        },
-        {
-            "id": 11,
-            "price": 120000,
-            "comment": "",
-            "category": "food"
-        },
-        {
-            "id": 12,
-            "price": 220000,
-            "comment": "",
-            "category": "food"
-        },
-        {
-            "id": 13,
-            "price": 220000,
-            "comment": "",
-            "category": "food"
-        }
-    ],
-    "category": [
-        {
-            "id": 1,
-            "category": "food"
-        },
-        {
-            "id": 2,
-            "category": "drink"
-        },
-        {
-            "id": 3,
-            "category": "transportation"
-        }
-    ]
+  "expenses": [
+    {
+      "id": 1,
+      "price": 15000,
+      "comment": "Pagi - Warteg",
+      "category": "food"
+    },
+    {
+      "id": 2,
+      "price": 20000,
+      "comment": "Starbuck",
+      "category": "drink"
+    },
+    {
+      "id": 3,
+      "price": 12000,
+      "comment": "Grab",
+      "category": "transportation"
+    },
+    {
+      "id": 4,
+      "price": 16000,
+      "comment": "Gojek",
+      "category": "transportation"
+    },
+    {
+      "id": 5,
+      "price": 12000,
+      "comment": "",
+      "category": "drink"
+    },
+    {
+      "id": 6,
+      "price": 100100,
+      "comment": "AYCE",
+      "category": "food"
+    },
+    {
+      "id": 7,
+      "price": 120000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "id": 8,
+      "price": 120000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "id": 9,
+      "price": 120000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "id": 10,
+      "price": 120000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "id": 11,
+      "price": 120000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "id": 12,
+      "price": 220000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "id": 13,
+      "price": 220000,
+      "comment": "",
+      "category": "food"
+    },
+    {
+      "price": 200200,
+      "comment": "Jasa",
+      "category": "drink",
+      "id": 14
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "category": "food"
+    },
+    {
+      "id": 2,
+      "category": "drink"
+    },
+    {
+      "id": 3,
+      "category": "transportation"
+    }
+  ]
 }
